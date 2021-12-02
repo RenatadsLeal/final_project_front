@@ -1,10 +1,10 @@
 import './style.scss';
-import { Container, Navbar, Nav, Offcanvas, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
+import { Container, Navbar, Nav } from 'react-bootstrap';
 
 const Header = () => {
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand href="#home">Vidoti's Bakery</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
