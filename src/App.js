@@ -1,12 +1,11 @@
-import './App.scss';
 import Header from './components/Header';
-import Home from './pages/Home'
+import RouteList from './routes';
 
-function App() {
+const App = () => {
   return (
     <>
-      <Header />
-      <Home />
+      <RouteList />
+      {/* <Header /> */}
     </>
   );
 }
