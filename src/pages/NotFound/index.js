@@ -1,21 +1,23 @@
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import './style.scss';
 
 const NotFound = () => {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
-    // setTimeout(() => {
-    //     navigate('/');
-    // }, 5000);
+    setTimeout(() => {
+        navigate('/');
+    }, 5000);
 
     return (
-        <>
+        <div id="notFound">
             <Helmet>
                 <title>Vidoti's Bakery | 404</title>
             </Helmet>
-            <h2>404 nada por aqui</h2>
-        </>
+            <h2>404 nada por aqui :(</h2>
+            <p>Voltando para Home</p>
+
+        </div>
     )
 }
 

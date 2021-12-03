@@ -1,14 +1,16 @@
 import './style.scss';
+import { Helmet } from 'react-helmet';
 import Header from '../../components/Header';
 import CarouselHome from './components/Carousel';
-import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
         <>
-        <Header />
-        <CarouselHome />
-        <Link to={"/teapot"}>Aqui</Link>
+            <Helmet>
+                <title>Vidoti's Bakery | Home</title>
+            </Helmet>
+            <Header />
+            <CarouselHome />
         </>
     )
 }

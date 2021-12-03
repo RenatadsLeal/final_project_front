@@ -1,10 +1,15 @@
 import './style.scss';
+import { Helmet } from 'react-helmet';
 
 const Teapot = () => {
     return (
-        <>
-        <p>Teapot</p>
-        </>
+        <div>
+            <Helmet>
+                <title>Vidoti's Bakery | Teapot</title>
+            </Helmet>
+            <h2>I'm a Teapot</h2>
+            <p>Fill me out and pour me over</p>
+        </div>
     )
 }
 

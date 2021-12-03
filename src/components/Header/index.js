@@ -1,4 +1,5 @@
 import './style.scss';
+import { LinkContainer } from 'react-router-bootstrap';
 import { Container, Navbar, Nav } from 'react-bootstrap';
 
 const Header = () => {
@@ -6,17 +7,15 @@ const Header = () => {
         <>
             <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="#home">Vidoti's Bakery</Navbar.Brand>
+                <LinkContainer to="/"><Navbar.Brand>Vidoti's Bakery</Navbar.Brand></LinkContainer>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto">
-
-                        </Nav>
+                        <Nav className="me-auto"></Nav>
                         <Nav>
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#deets">Categorias</Nav.Link>
-                            <Nav.Link href="#deets">Produtos</Nav.Link>
-                            <Nav.Link href="#deets">Sobre nós</Nav.Link>
+                            <LinkContainer to="/"><Nav.Link>Home</Nav.Link></LinkContainer>
+                            <LinkContainer to="/categorias"><Nav.Link>Categorias</Nav.Link></LinkContainer>
+                            <LinkContainer to="/produto"><Nav.Link>Produtos</Nav.Link></LinkContainer>
+                            <LinkContainer to="/sobrenos"><Nav.Link>Sobre nós</Nav.Link></LinkContainer>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

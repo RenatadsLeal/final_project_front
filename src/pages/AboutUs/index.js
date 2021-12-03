@@ -2,16 +2,16 @@ import './style.scss';
 import { Helmet } from 'react-helmet';
 import Header from '../../components/Header';
 
-const Category = () => {
+const AboutUs = () => {
     return (
         <>
             <Helmet>
-                <title>Vidoti's Bakery | Categorias</title>
+                <title>Vidoti's Bakery | Sobre nós</title>
             </Helmet>
             <Header />
-            <p>Category</p>
+            <p>About us</p>
         </>
     )
 }
 
-export default Category;
+export default AboutUs;
