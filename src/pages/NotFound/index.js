@@ -19,13 +19,13 @@ const NotFound = () => {
     }, [navigate, timer])
 
     return (
-        <div id="notFound">
+        <div id="notFound" className="d-flex justify-content-end align-items-center">
             <Helmet>
                 <title>Vidoti's Bakery | 404</title>
             </Helmet>
-            <h2>404 nada por aqui :(</h2>
-            <p>Voltando para Home enquanto a massa descansa</p>
-            <div>
+            <div className="me-5">
+                <h2>404 | nada por aqui :(</h2>
+                <p>Voltando para Home enquanto a massa descansa</p>
                 <h2>{timer}</h2>
             </div>
 

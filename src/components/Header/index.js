@@ -1,8 +1,17 @@
 import './style.scss';
 import { LinkContainer } from 'react-router-bootstrap';
 import { NavDropdown, Container, Navbar, Nav } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+// import {}
 
 const Header = () => {
+    const [category, setCategory] = useState();
+
+    useEffect(() => {
+        //chamada api
+        console.log(category);
+    })
+
     return (
         <>
             <Navbar className="fixed-top" collapseOnSelect expand="md" bg="dark" variant="dark">
@@ -14,14 +23,14 @@ const Header = () => {
                         <Nav>
                             <LinkContainer to="/"><Nav.Link>Home</Nav.Link></LinkContainer>
                             <NavDropdown title="Categorias" id="navbarScrollingDropdown">
-                            <LinkContainer to="/pao-branco"><NavDropdown.Item>Pão Branco</NavDropdown.Item></LinkContainer>
-                                <NavDropdown.Item >Pão Integral</NavDropdown.Item>
-                                <NavDropdown.Item >Pão Recheado</NavDropdown.Item>
-                                <NavDropdown.Item >Pão Doce</NavDropdown.Item>
-                                <NavDropdown.Item >Confeitos</NavDropdown.Item>
-                                <NavDropdown.Item >Utensílios</NavDropdown.Item>
+                            <LinkContainer to="/categorias/pao-branco"><NavDropdown.Item>Pão Branco</NavDropdown.Item></LinkContainer>
+                            <LinkContainer to="/categorias/pao-integral"><NavDropdown.Item >Pão Integral</NavDropdown.Item></LinkContainer>
+                            <LinkContainer to="/categorias/pao-recheado"><NavDropdown.Item >Pão Recheado</NavDropdown.Item></LinkContainer>
+                            <LinkContainer to="/categorias/pao-doce"><NavDropdown.Item >Pão Doce</NavDropdown.Item></LinkContainer>
+                            <LinkContainer to="/categorias/confeitos"><NavDropdown.Item >Confeitos</NavDropdown.Item></LinkContainer>
+                            <LinkContainer to="/categorias/utensilios"><NavDropdown.Item >Utensílios</NavDropdown.Item></LinkContainer>
                             </NavDropdown>
-                            <LinkContainer to="/produto"><Nav.Link>Produtos</Nav.Link></LinkContainer>
+                            <LinkContainer to="/produtos"><Nav.Link>Produtos</Nav.Link></LinkContainer>
                             <LinkContainer to="/sobrenos"><Nav.Link>Sobre nós</Nav.Link></LinkContainer>
                         </Nav>
                     </Navbar.Collapse>

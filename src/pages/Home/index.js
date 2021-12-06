@@ -7,13 +7,14 @@ import Categories from './components/Categories';
 const Home = () => {
     return (
         <>
-        <Header />
-        <div id="banner">
-
-        </div>
             <Helmet>
                 <title>Vidoti's Bakery | Home</title>
             </Helmet>
+            <Header />
+            <div id="banner">
+
+            </div>
+
             <Categories />
             <CarouselHome />
         </>
