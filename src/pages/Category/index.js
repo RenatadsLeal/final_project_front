@@ -2,7 +2,7 @@ import './style.scss';
 import { Helmet } from 'react-helmet';
 import Header from '../../components/Header';
 import { Card, Button, Row, Col, Container } from 'react-bootstrap';
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const Category = () => {
 const {nomecategoria} = useParams();

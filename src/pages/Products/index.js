@@ -12,7 +12,7 @@ const Products = () => {
             </Helmet>
 
             <Header />
-            <div id="category">
+            <div id="products">
                 <Container>
                     <Row>
                         <Col md={4} sm={6}>
