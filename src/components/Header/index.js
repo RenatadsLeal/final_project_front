@@ -13,8 +13,8 @@ const Header = () => {
     })
 
     return (
-        <>
-            <Navbar className="fixed-top" collapseOnSelect expand="md" bg="dark" variant="dark">
+        <div id="header">
+            <Navbar className="fixed-top" collapseOnSelect expand="md" bg="light opacity-75" variant="light">
                 <Container>
                     <LinkContainer to="/"><Navbar.Brand>Vidoti's Bakery</Navbar.Brand></LinkContainer>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -36,7 +36,7 @@ const Header = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-        </>
+        </div>
     )
 }
 
