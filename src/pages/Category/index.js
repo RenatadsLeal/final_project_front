@@ -1,6 +1,5 @@
 import './style.scss';
-import { Helmet } from 'react-helmet';
-import Header from '../../components/Header';
+import { Helmet } from 'react-helmet-async';
 import { Card, Button, Row, Col, Container } from 'react-bootstrap';
 import { useParams } from "react-router-dom";
 
@@ -13,7 +12,6 @@ const {nomecategoria} = useParams();
                 <title>Vidoti's Bakery | {nomecategoria}</title>
             </Helmet>
 
-            <Header />
             <div id="category">
                 <Container>
                     <Row>

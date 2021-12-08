@@ -1,8 +1,7 @@
-import { Helmet } from 'react-helmet';
-import Header from '../../components/Header';
+import { Helmet } from 'react-helmet-async';
 import './style.scss';
 import { useParams } from 'react-router-dom';
-import { Card, Button, Row, Col, CardGroup } from 'react-bootstrap';
+import { Card, Button, CardGroup } from 'react-bootstrap';
 
 const Product = () => {
     const { idproduto } = useParams();
@@ -13,7 +12,7 @@ const Product = () => {
             <Helmet>
                 <title>Vidoti's Bakery | {idproduto}</title>
             </Helmet>
-            <Header />
+            
             <div id="product">
             <CardGroup>
                 <Card >

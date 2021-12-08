@@ -1,3 +1,5 @@
+import ScrollToTop from '../components/ScrollToTop';
+import Header from '../components/Header';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 import Category from '../pages/Category';
@@ -6,19 +8,23 @@ import Product from '../pages/Product';
 import AboutUs from '../pages/AboutUs';
 import NotFound from '../pages/NotFound';
 import Teapot from '../pages/Teapot';
+import { HelmetProvider } from 'react-helmet-async';
 
 const RouteList = () => (
     <BrowserRouter>
+    <ScrollToTop />
+    <HelmetProvider>
+    <Header />
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/categorias/:nomecategoria" element={<Category />} />
-            {/* Como fazer dar 404 aqui */}
             <Route path="/produtos" element={<Products />} />
             <Route path="/produtos/:idproduto" element={<Product />} />     
             <Route path="/teapot" element={<Teapot />} />
             <Route path="/sobrenos" element={<AboutUs />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
+        </HelmetProvider>
     </BrowserRouter>
     );
 

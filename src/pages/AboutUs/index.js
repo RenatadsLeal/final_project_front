@@ -1,6 +1,5 @@
 import './style.scss';
-import { Helmet } from 'react-helmet';
-import Header from '../../components/Header';
+import { Helmet } from 'react-helmet-async';
 
 const AboutUs = () => {
     return (
@@ -8,7 +7,7 @@ const AboutUs = () => {
             <Helmet>
                 <title>Vidoti's Bakery | Sobre nós</title>
             </Helmet>
-            <Header />
+            
             <p>About us</p>
         </>
     )
