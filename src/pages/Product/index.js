@@ -2,10 +2,11 @@ import { Helmet } from 'react-helmet-async';
 import './style.scss';
 import { useParams } from 'react-router-dom';
 import { Card, Button, CardGroup } from 'react-bootstrap';
+import useAxios from '../../hooks/useAxios';
 
 const Product = () => {
     const { idproduto } = useParams();
-    // precisa mesmo ser com o id? nao pode ser com o nome do produto?
+    const product = useAxios(`/product/${idproduto}`);
 
     return (
         <>
@@ -16,17 +17,16 @@ const Product = () => {
             <div id="product">
             <CardGroup>
                 <Card >
-                    <Card.Img variant="top" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-1.2.1" />
+                    <Card.Img variant="top" src={product.image} alt={product.title} />
                 </Card>
 
                 <Card >
                     <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
+                        <Card.Title>{product.title}</Card.Title>
                         <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                            {product.description}
                         </Card.Text>
-                        <Button variant="light">Go somewhere</Button>
+                        <Button variant="light">Comprar</Button>
                     </Card.Body>
                 </Card>
             </CardGroup>

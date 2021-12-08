@@ -2,6 +2,7 @@ import './style.scss';
 import { NavDropdown, Container, Navbar, Nav } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
+import CartContent from './components/CartContent';
 
 // import {}
 
@@ -27,15 +28,16 @@ const Header = () => {
                         {/* Colocar o Header no Routes, fica em todas as telas */}
                             <Nav.Link as={Link} to="/">Home</Nav.Link>
                             <NavDropdown title="Categorias" id="navbarScrollingDropdown">
-                            <NavDropdown.Item as={Link} to="/categorias/pao-branco">Pão Branco</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to="/categorias/pao-integral">Pão Integral</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to="/categorias/pao-recheado">Pão Recheado</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to="/categorias/pao-doce">Pão Doce</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to="/categorias/confeitos">Confeitos</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to="/categorias/utensilios">Utensílios</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/categorias/Pão%20branco">Pão Branco</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/categorias/Pão%20integral">Pão Integral</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/categorias/Pão%20recheado">Pão Recheado</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/categorias/Pão%20doce">Pão Doce</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/categorias/Confeitos">Confeitos</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/categorias/Utensílios">Utensílios</NavDropdown.Item>
                             </NavDropdown>
                             <Nav.Link as={Link} to="/produtos">Produtos</Nav.Link>
                             <Nav.Link as={Link} to="/sobrenos">Sobre nós</Nav.Link>
+                            <CartContent />
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
