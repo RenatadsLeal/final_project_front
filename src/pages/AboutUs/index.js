@@ -17,7 +17,7 @@ const AboutUs = () => {
         {
             id: 2,
             name: "Carolina Hakamada Montesinos",
-            description: "carol haka",
+            description: "porquinha",
             linkGitHub: "https://github.com/hakacarol",
             linkLinkedIn: "https://www.linkedin.com/in/hakacarolina/",
             email: "haka.carolina@gmail.com",
@@ -63,11 +63,12 @@ const AboutUs = () => {
             <Row>
                 {creators.map(creator => {
                     return (
-                        <Col xs={9} md={6} key={creator.id}>
+                        <Col xs={12} md={8} lg={6} key={creator.id}>
                         <CardGroup className="cardCreator">
                     <Card className="d-flex justify-content-center align-items-center p-3 cardPhoto">
                         <Image className="photo" variant="top" src="https://images-ext-1.discordapp.net/external/Y3_dTCG9CNWQ7U3s4qG_HGvDvrnjy2trJ1omNwbiIe0/%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D2%26w%3D500/https/images.pexels.com/photos/1387070/pexels-photo-1387070.jpeg?width=440&height=660" roundedCircle alt="pessoa" />
                     </Card>
+                    <Col xs={12} md={8} lg={6} key={creator.id}>
     
                     <Card >
                         <Card.Body>
@@ -80,6 +81,7 @@ const AboutUs = () => {
                             <Card.Text><a href={"mailto:"+creator.email}><img className="contactIcon" src="https://cdn-icons-png.flaticon.com/512/2111/2111710.png" alt="Mail Icon"></img></a></Card.Text>
                         </Card.Body>
                     </Card>
+                    </Col>
                 </CardGroup>
                 </Col>
                     )

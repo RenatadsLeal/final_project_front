@@ -15,6 +15,7 @@ const BasketContextProvider = ({ children }) => {
   }, [products]);
 
   const addProduct = (product) => dispatch({ type: 'ADD_PRODUCT', payload: product });
+  const deleteProduct = (product) => dispatch({ type: 'DELETE_PRODUCT', payload: product });
 
   return (
     <BasketContext.Provider value={{ products, addProduct }}>

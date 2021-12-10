@@ -36,7 +36,7 @@ const Header = () => {
                             </NavDropdown>
                             <Nav.Link as={Link} to="/produtos">Produtos</Nav.Link>
                             <Nav.Link as={Link} to="/sobrenos">Sobre nós</Nav.Link>
-                            <NavDropdown title={<img id="cartLogo" src="https://cdn-icons.flaticon.com/png/512/3133/premium/3133039.png?token=exp=1638998431~hmac=691e367dfdf6060bedb77e894e271b52" alt="carrinho"></img>} id="navbarScrollingDropdown">
+                            <NavDropdown title={<img id="cartLogo" src="https://cdn-icons-png.flaticon.com/512/1685/1685564.png" alt="carrinho"></img>} id="navbarScrollingDropdown">
                                 
                             <BasketContent />
                             </NavDropdown>
