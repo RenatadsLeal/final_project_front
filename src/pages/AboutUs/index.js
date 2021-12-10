@@ -57,38 +57,38 @@ const AboutUs = () => {
             <Helmet>
                 <title>Vidoti's Bakery | Sobre nós</title>
             </Helmet>
-            
+
             <div id="aboutUs">
-            <Container>
-            <Row>
-                {creators.map(creator => {
-                    return (
-                        <Col xs={12} md={8} lg={6} key={creator.id}>
-                        <CardGroup className="cardCreator">
-                    <Card className="d-flex justify-content-center align-items-center p-3 cardPhoto">
-                        <Image className="photo" variant="top" src="https://images-ext-1.discordapp.net/external/Y3_dTCG9CNWQ7U3s4qG_HGvDvrnjy2trJ1omNwbiIe0/%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D2%26w%3D500/https/images.pexels.com/photos/1387070/pexels-photo-1387070.jpeg?width=440&height=660" roundedCircle alt="pessoa" />
-                    </Card>
-                    <Col xs={12} md={8} lg={6} key={creator.id}>
-    
-                    <Card >
-                        <Card.Body>
-                            <Card.Title>{creator.name}</Card.Title>
-                            <Card.Text>
-                                {creator.description}
-                            </Card.Text>
-                            <Card.Text><a href={creator.linkGitHub}><img className="contactIcon" src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png" alt="Github icon"></img></a></Card.Text>
-                            <Card.Text><a href={creator.linkLinkedIn}><img className="contactIcon" width="5" height="5" src="https://cdn-icons-png.flaticon.com/512/2111/2111532.png" alt="LinkedIn Icon"></img></a></Card.Text>
-                            <Card.Text><a href={"mailto:"+creator.email}><img className="contactIcon" src="https://cdn-icons-png.flaticon.com/512/2111/2111710.png" alt="Mail Icon"></img></a></Card.Text>
-                        </Card.Body>
-                    </Card>
-                    </Col>
-                </CardGroup>
-                </Col>
-                    )
-                })}
-            
-            </Row>
-            </Container>
+                <Container>
+                    <Row>
+                        {creators.map(creator => {
+                            return (
+                                <Col xs={12} md={8} lg={6} key={creator.id}>
+                                    <CardGroup className="cardCreator">
+                                        <Card className="d-flex justify-content-center align-items-center p-3 cardPhoto">
+                                            <Image className="photo" variant="top" src="https://images-ext-1.discordapp.net/external/Y3_dTCG9CNWQ7U3s4qG_HGvDvrnjy2trJ1omNwbiIe0/%3Fauto%3Dcompress%26cs%3Dtinysrgb%26dpr%3D2%26w%3D500/https/images.pexels.com/photos/1387070/pexels-photo-1387070.jpeg?width=440&height=660" roundedCircle alt="pessoa" />
+                                        </Card>
+                                        <Col xs={12} md={8} lg={6} key={creator.id}>
+
+                                            <Card >
+                                                <Card.Body>
+                                                    <Card.Title>{creator.name}</Card.Title>
+                                                    <Card.Text>
+                                                        {creator.description}
+                                                    </Card.Text>
+                                                    <Card.Text><a href={creator.linkGitHub}><img className="contactIcon" src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png" alt="Github icon"></img></a></Card.Text>
+                                                    <Card.Text><a href={creator.linkLinkedIn}><img className="contactIcon" width="5" height="5" src="https://cdn-icons-png.flaticon.com/512/2111/2111532.png" alt="LinkedIn Icon"></img></a></Card.Text>
+                                                    <Card.Text><a href={"mailto:" + creator.email}><img className="contactIcon" src="https://cdn-icons-png.flaticon.com/512/2111/2111710.png" alt="Mail Icon"></img></a></Card.Text>
+                                                </Card.Body>
+                                            </Card>
+                                        </Col>
+                                    </CardGroup>
+                                </Col>
+                            )
+                        })}
+
+                    </Row>
+                </Container>
             </div>
         </>
     )

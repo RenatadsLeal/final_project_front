@@ -20,8 +20,8 @@ const Header = () => {
                 <Navbar.Brand as={Link} to="/">Vidoti's Bakery</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto"></Nav>
-                        <Nav>
+                        {/* <Nav className="me-auto"></Nav> */}
+                        <Nav className="me-auto">
                             {/* /export default function / export conts Componente =  () =>import sem {} (tudo em uma linha) / export default comeponete com {} */}
                         {/* <Navbar.Brand as={Link} to ="/">Home</Navbar.Brand> */}
                         {/* Colocar o Header no Routes, fica em todas as telas */}
@@ -36,11 +36,15 @@ const Header = () => {
                             </NavDropdown>
                             <Nav.Link as={Link} to="/produtos">Produtos</Nav.Link>
                             <Nav.Link as={Link} to="/sobrenos">Sobre nós</Nav.Link>
+                            {/* <Nav className="me-auto"></Nav> */}
+                            </Nav>
+                            <Nav>
                             <NavDropdown title={<img id="cartLogo" src="https://cdn-icons-png.flaticon.com/512/1685/1685564.png" alt="carrinho"></img>} id="navbarScrollingDropdown">
                                 
                             <BasketContent />
                             </NavDropdown>
-                        </Nav>
+                            </Nav>
+                        
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
