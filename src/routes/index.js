@@ -1,4 +1,4 @@
-import ScrollToTop from '../components/ScrollToTop';
+// import ScrollToTop from '../components/ScrollToTop';
 import Header from '../components/Header';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
@@ -9,13 +9,13 @@ import AboutUs from '../pages/AboutUs';
 import NotFound from '../pages/NotFound';
 import Teapot from '../pages/Teapot';
 import { HelmetProvider } from 'react-helmet-async';
-import CartContextProvider from '../contexts/CartContext';
+import BasketContextProvider from '../contexts/BasketContext';
 
 const RouteList = () => (
     <BrowserRouter>
-    <ScrollToTop />
+    {/* <ScrollToTop /> */}
     <HelmetProvider>
-        <CartContextProvider>
+        <BasketContextProvider>
     <Header />
         <Routes>
             <Route path="/" element={<Home />} />
@@ -26,7 +26,7 @@ const RouteList = () => (
             <Route path="/sobrenos" element={<AboutUs />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
-        </CartContextProvider>
+        </BasketContextProvider>
         </HelmetProvider>
     </BrowserRouter>
     );

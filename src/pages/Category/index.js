@@ -3,11 +3,14 @@ import { Helmet } from 'react-helmet-async';
 import { Card, Button, Row, Col, Container } from 'react-bootstrap';
 import { useParams } from "react-router-dom";
 import useAxios from '../../hooks/useAxios';
-
+import {Link} from 'react-router-dom';
+import { BasketContext } from '../../contexts/BasketContext';
+import { useContext } from 'react';
 
 const Category = () => {
     const { nomecategoria } = useParams();
     const productsOfCategory = useAxios(`/category/${nomecategoria}`);
+    const { addProductOfCategory } = useContext(BasketContext);
     console.log(productsOfCategory);
     return (
         <>
@@ -22,11 +25,11 @@ const Category = () => {
                         return (
                             <Col md={4} sm={6} key={id}>
                                 <Card >
-                                    <Card.Img variant="top" src={image} alt={title} />
+                                <Link to={`/produtos/${id}`}><Card.Img variant="top" src={image} alt={title} /></Link>
                                     <Card.Body>
                                         <Card.Title>{title}</Card.Title>
                                         <Card.Text>{description}</Card.Text>
-                                        <Button variant="light">Adicionar ao carrinho</Button>
+                                        <Button onClick={()=> addProductOfCategory({productsOfCategory})} variant="light">Adicionar ao carrinho</Button>
                                     </Card.Body>
                                 </Card>
                             </Col>

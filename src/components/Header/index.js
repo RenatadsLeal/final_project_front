@@ -1,13 +1,12 @@
 import './style.scss';
 import { NavDropdown, Container, Navbar, Nav } from 'react-bootstrap';
-import { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
-import CartContent from './components/CartContent';
+import BasketContent from './components/BasketContent';
 
 // import {}
 
 const Header = () => {
-    const [category, setCategory] = useState();
+    // const [category, setCategory] = useState();
 
     // useEffect(() => {
     //     //chamada api
@@ -32,12 +31,15 @@ const Header = () => {
                             <NavDropdown.Item as={Link} to="/categorias/Pão%20integral">Pão Integral</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to="/categorias/Pão%20recheado">Pão Recheado</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to="/categorias/Pão%20doce">Pão Doce</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to="/categorias/Confeitos">Confeitos</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to="/categorias/Utensílios">Utensílios</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/categorias/Confeito">Confeito</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/categorias/Utensílio">Utensílio</NavDropdown.Item>
                             </NavDropdown>
                             <Nav.Link as={Link} to="/produtos">Produtos</Nav.Link>
                             <Nav.Link as={Link} to="/sobrenos">Sobre nós</Nav.Link>
-                            <CartContent />
+                            <NavDropdown title={<img id="cartLogo" src="https://cdn-icons.flaticon.com/png/512/3133/premium/3133039.png?token=exp=1638998431~hmac=691e367dfdf6060bedb77e894e271b52" alt="carrinho"></img>} id="navbarScrollingDropdown">
+                                
+                            <BasketContent />
+                            </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

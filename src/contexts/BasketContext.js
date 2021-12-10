@@ -1,11 +1,11 @@
 import { createContext, useReducer, useEffect } from 'react';
-import { cartReducer } from '../reducers/cartReducer';
+import { basketReducer } from '../reducers/basketReducer';
 
 
-export const CartContext = createContext();
+export const BasketContext = createContext();
 
-const CartContextProvider = ({ children }) => {
-  const [products, dispatch] = useReducer(cartReducer, [], () => {
+const BasketContextProvider = ({ children }) => {
+  const [products, dispatch] = useReducer(basketReducer, [], () => {
     const localData = localStorage.getItem('products');
     return localData ? JSON.parse(localData) : [];
   });
@@ -17,10 +17,10 @@ const CartContextProvider = ({ children }) => {
   const addProduct = (product) => dispatch({ type: 'ADD_PRODUCT', payload: product });
 
   return (
-    <CartContext.Provider value={{ products, addProduct }}>
+    <BasketContext.Provider value={{ products, addProduct }}>
       {children}
-    </CartContext.Provider>
+    </BasketContext.Provider>
   )
 }
 
-export default CartContextProvider;
+export default BasketContextProvider;

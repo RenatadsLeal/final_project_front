@@ -3,10 +3,13 @@ import './style.scss';
 import { useParams } from 'react-router-dom';
 import { Card, Button, CardGroup } from 'react-bootstrap';
 import useAxios from '../../hooks/useAxios';
+import { BasketContext } from '../../contexts/BasketContext';
+import { useContext } from 'react';
 
 const Product = () => {
     const { idproduto } = useParams();
     const product = useAxios(`/product/${idproduto}`);
+    const { addProduct } = useContext(BasketContext);
 
     return (
         <>
@@ -26,7 +29,7 @@ const Product = () => {
                         <Card.Text>
                             {product.description}
                         </Card.Text>
-                        <Button variant="light">Comprar</Button>
+                        <Button onClick={()=> addProduct({product})} variant="light">Adicionar ao carrinho</Button>
                     </Card.Body>
                 </Card>
             </CardGroup>
