@@ -14,7 +14,7 @@ const Categories = () => {
                         categories.map(({ id, name, products }) => {
                             return (
                                 <Col xs={6} md={4} key={id}>
-                                    <Link to={`/categorias/${name}`}>
+                                    <Link className="link-secondary" to={`/categorias/${name}`}>
                                         <Image src={products[0].image} roundedCircle alt={name}/>
                                         <h6>{name}</h6>
                                     </Link>

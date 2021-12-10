@@ -6,8 +6,6 @@ import { BasketContext } from '../../../../contexts/BasketContext';
 
 const CarouselHome = () => {
   const products = useAxios('/product');
-  console.log(products);
-  // const carouselProducts = [[products[0], products[7], products[12], products[18]], [products[25], products[30], products[35], products[39]]];
   let randomIndex = Math.floor(Math.random() * products.length);
 
   let shuffle = array => {
@@ -21,50 +19,66 @@ const CarouselHome = () => {
     }
   }
   shuffle(products);
-  let selectedProducts1 = products.slice(0, 4);
-  let selectedProducts2 = products.slice(4, 8);
+  let selectedProducts1 = products.slice(0, 5);
+  let selectedProducts2 = products.slice(5, 10);
+
+  // const assignClassName = index => {
+  //   if (index === 1) {
+  //     return "d-none d-sm-block";
+  //   } if ((index === 2) || (index === 3)) {
+  //     return "d-none d-md-block";
+  //   }
+  // }
 
   const assignClassName = index => {
     if (index === 1) {
       return "d-none d-sm-block";
-    } if ((index === 2) || (index === 3)) {
+    } if (index === 2) {
       return "d-none d-md-block";
+    } if (index === 3) {
+      return "d-none d-lg-block";
+    } if (index === 4) {
+      return "d-none d-xl-block";
     }
   }
 
-  // console.log(selectedProducts[0].id);
   return (
-    <Carousel className="photoCarousel">
+
+    <Carousel>
+      
       <Carousel.Item>
-        <Row> 
-          {
-            (selectedProducts1.length !== 0) && (
-              selectedProducts1.map(( { id, image }, index) => {
-                return (
-                  <Col className={assignClassName(index)} md={3} sm={6} key={id}>
-                    <Image className="d-block w-100" src={image} alt="Slide" />
-                  </Col>
-                )
-              })
-            )
-          }
-        </Row>
+        
+          <Row className="p-3 g-0 d-flex justify-content-center">
+            {
+              (selectedProducts1.length !== 0) && (
+                selectedProducts1.map(({ id, image }, index) => {
+                  return (
+                    <Col className={`${assignClassName(index)}`} xs={12} sm={6} md={4} lg={3} xl={2} key={id}>
+                      <Image className="p-3 photoCarousel d-block w-100" src={image} alt="Slide" />
+                    </Col>
+                  )
+                })
+              )
+            }
+          </Row>
       </Carousel.Item>
+       
       <Carousel.Item>
-        <Row>
-          {
-            (selectedProducts2.length !== 0) && (
-              selectedProducts2.map(({ id, image }, index) => {
-                return (
-                  <Col className={assignClassName(index)} md={3} sm={6} key={id}>
-                    <Image className="d-block w-100" src={image} alt="Slide" />
-                  </Col>
-                )
-              })
-            )
-          }
-        </Row>
+          <Row className="p-3 g-0 d-flex justify-content-center">
+            {
+              (selectedProducts2.length !== 0) && (
+                selectedProducts2.map(({ id, image }, index) => {
+                  return (
+                    <Col className={`${assignClassName(index)}`} xs={12} sm={6} md={4} lg={3} xl={2} key={id}>
+                      <Image className="p-3 photoCarousel d-block w-100" src={image} alt="Slide" />
+                    </Col>
+                  )
+                })
+              )
+            }
+          </Row>
       </Carousel.Item>
+        
     </Carousel >
   )
 }
