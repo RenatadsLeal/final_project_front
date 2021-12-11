@@ -1,9 +1,11 @@
+import './style.scss';
 import { useEffect, useState } from 'react';
 import { useContext } from 'react';
 import { BasketContext } from '../../contexts/BasketContext';
 import { Helmet } from 'react-helmet-async';
 import { Card, Button, Container } from 'react-bootstrap';
-import './style.scss';
+import { Link } from 'react-router-dom';
+
 
 const Basket = () => {
     const [total, setTotal] = useState(0);
@@ -38,8 +40,8 @@ const Basket = () => {
                             <Card key={product.id}>
                                 <Card.Body className="d-flex align-items-center flex-wrap g-1">
                                     
-                                    <Card.Img className="col" variant="top" src={product.image} alt={product.title} />
-                                    <Card.Title className="col p-3">{product.title}</Card.Title>
+                                <Link to={`/produtos/${product.id}`}><Card.Img className="col" variant="top" src={product.image} alt={product.title} /></Link>
+                                <Card.Title className="col p-3">{product.title}</Card.Title>
                                     <Card.Text className="col p-3">R$ {product.price}</Card.Text>
                                     
                                     <Button className="col" onClick={() => deleteProduct({ product })} variant="light">Excluir</Button>
