@@ -1,12 +1,11 @@
 import './style.scss';
 import { Carousel, Row, Col, Image } from 'react-bootstrap';
 import useAxios from '../../../../hooks/useAxios';
-import { useContext } from 'react';
-import { BasketContext } from '../../../../contexts/BasketContext';
+import { Link } from 'react-router-dom';
 
 const CarouselHome = () => {
   const products = useAxios('/product');
-  let randomIndex = Math.floor(Math.random() * products.length);
+  // let randomIndex = Math.floor(Math.random() * products.length);
 
   let shuffle = array => {
     let currentIndex = array.length;
@@ -54,7 +53,7 @@ const CarouselHome = () => {
                 selectedProducts1.map(({ id, image }, index) => {
                   return (
                     <Col className={`${assignClassName(index)}`} xs={12} sm={6} md={4} lg={3} xl={2} key={id}>
-                      <Image className="p-3 photoCarousel d-block w-100" src={image} alt="Slide" />
+                      <Link to={`/produtos/${id}`}><Image className="p-3 photoCarousel d-block w-100" src={image} alt="Slide" /></Link>
                     </Col>
                   )
                 })
@@ -70,7 +69,7 @@ const CarouselHome = () => {
                 selectedProducts2.map(({ id, image }, index) => {
                   return (
                     <Col className={`${assignClassName(index)}`} xs={12} sm={6} md={4} lg={3} xl={2} key={id}>
-                      <Image className="p-3 photoCarousel d-block w-100" src={image} alt="Slide" />
+                      <Link to={`/produtos/${id}`}><Image className="p-3 photoCarousel d-block w-100" src={image} alt="Slide" /></Link>
                     </Col>
                   )
                 })

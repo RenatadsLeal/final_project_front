@@ -1,34 +1,60 @@
-import useAxios from '../../hooks/useAxios';
 import { useEffect, useState } from 'react';
 import { useContext } from 'react';
-import { BasketContext } from '../contexts/BasketContext';
-import { Helmet } from 'react-helmet';
+import { BasketContext } from '../../contexts/BasketContext';
+import { Helmet } from 'react-helmet-async';
+import { Card, Button, Container } from 'react-bootstrap';
 import './style.scss';
 
 const Basket = () => {
-    const products = useAxios('/product');
     const [total, setTotal] = useState(0);
-    const { addProduct, deleteProduct } = useContext(BasketContext)
+    const { products, deleteProduct } = useContext(BasketContext);
+    console.log(products);
 
     useEffect(() => {
         Total()
-    },[addProduct])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [products])
 
-    function Total() {
-       
-       
-
+    const Total = () => {
+        let subtotal = 0;
+        if (products.length === 0) {
+            setTotal(0)
+        }
+        products.forEach(({ product }) => {
+            setTotal(subtotal += parseInt(product.price))
+        })
     }
 
     return (
         <>
             <Helmet>
-                <title>Vidoti's Bakery | Carrinho</title>
+                <title>Vidoti's Bakery | Cesta</title>
             </Helmet>
+
+            <Container id="basket">
+                {
+                    products.map(({ product }) => {
+                        return (
+                            <Card key={product.id}>
+                                <Card.Body className="d-flex align-items-center flex-wrap g-1">
+                                    
+                                    <Card.Img className="col" variant="top" src={product.image} alt={product.title} />
+                                    <Card.Title className="col p-3">{product.title}</Card.Title>
+                                    <Card.Text className="col p-3">R$ {product.price}</Card.Text>
+                                    
+                                    <Button className="col" onClick={() => deleteProduct({ product })} variant="light">Excluir</Button>
+                                </Card.Body>
+                            </Card>
+                        )
+                    })
+                }
+                <Card className="d-flex p-3">
+                <Card.Title className="ms-auto">Total R$ {total}</Card.Title>
+                </Card>
+                    
+            </Container>
         </>
-
     )
-
 }
 
 export default Basket;

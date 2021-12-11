@@ -12,13 +12,10 @@ const BasketContent = () => {
   // console.log(products.product.id);
   // console.log(products[0].id)
 
-  return products.length ? (
-      //esse product pode ser qq nome?
+  return (
     products.map(({product}) => (
-      <NavDropdown.Item key={product.id} as={Link} to={`/product/${product.title}`}>{product.title}</NavDropdown.Item>
+      <NavDropdown.Item key={product.id} as={Link} to={`/produtos/${product.id}`}>{product.title}</NavDropdown.Item>
     ))
-  ) : (
-    <NavDropdown.Item><img id="cartLogo" src="https://cdn-icons.flaticon.com/png/512/3133/premium/3133039.png?token=exp=1638998431~hmac=691e367dfdf6060bedb77e894e271b52" alt="carrinho"></img> </NavDropdown.Item>
   )
 }
 

@@ -13,11 +13,11 @@ const Home = () => {
             </Helmet>
             
             <div id="banner" className="d-flex">
-                <Container className="bannerAdd position-absolute bottom-0 start-0 p-5">
+                <Container className="bannerAdd position-absolute bottom-0 start-0 p-4">
                     <h2>Panettone artesanal</h2>
-                    <p>Edição limitada com 48hrs de fermentação</p>
+                    <p>Edição limitada de Natal com 48h de fermentação</p>
                     
-                    <Link to="./"><Button variant="light">Compra aqui moça</Button></Link>
+                    <Link to="/produtos/48"><Button variant="light">Detalhes</Button></Link>
                 </Container>
 
             </div>

@@ -15,3 +15,43 @@
     
     }
 }
+
+@media screen and (min-width: 520px) {
+    #categories {
+        img {
+            object-fit: cover;
+            width: 10rem;
+            height: 10rem;
+        }
+    }
+}
+
+@media screen and (min-width: 830px) {
+    #categories {
+        img {
+            object-fit: cover;
+            width: 12rem;
+            height: 12rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1700px) {
+    #categories {
+        img {
+            object-fit: cover;
+            width: 16rem;
+            height: 16rem;
+        }
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    #categories {
+        img {
+            object-fit: cover;
+            width: 17rem;
+            height: 17rem;
+        }
+    }
+}
