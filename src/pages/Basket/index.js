@@ -63,7 +63,7 @@ const Basket = () => {
                                 title: 'Pedido confirmado!',
                                 text: 'Sua fornada sairá em breve',
                                 confirmButtonColor: '#000000',
-                                imageUrl: 'https://cdn-icons.flaticon.com/png/512/2565/premium/2565434.png?token=exp=1639255570~hmac=602b2b9a9c3c7eff94eebb00f2d1677a',
+                                imageUrl: 'https://cdn-icons-png.flaticon.com/512/3014/3014466.png',
                                 imageWidth: 200,
                                 imageAlt: 'bread',
                             }),
