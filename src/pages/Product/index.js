@@ -10,7 +10,6 @@ const Product = () => {
     const { idproduto } = useParams();
     const product = useAxios(`/product/${idproduto}`);
     const { addProduct } = useContext(BasketContext);
-    console.log(product.title);
 
     return (
         <>

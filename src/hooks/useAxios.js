@@ -13,9 +13,9 @@ const useAxios = (url) => {
         console.log(response.data);
       } catch (error) {
         Swal.fire({
-            title: error.response,
+            title: 'Error',
             icon: 'error',
-            text: error.response
+            text: 'Failed to load'
         })
       }
     }
