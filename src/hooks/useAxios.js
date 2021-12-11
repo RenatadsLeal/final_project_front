@@ -15,7 +15,8 @@ const useAxios = (url) => {
         Swal.fire({
             title: 'Error',
             icon: 'error',
-            text: 'Failed to load'
+            text: 'Failed to load',
+            confirmButtonColor: '#000000'
         })
       }
     }

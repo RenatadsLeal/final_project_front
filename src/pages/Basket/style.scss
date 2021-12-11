@@ -1,5 +1,5 @@
 #basket {
-    padding: 5rem;
+    padding-top: 5rem;
 
     .card-img-top {
         height: 5rem;
@@ -10,6 +10,9 @@
 
     button {
         max-width: 5rem;
+    }
+    .confirmButton {
+        max-width: 10rem;
     }
 
     // .card {

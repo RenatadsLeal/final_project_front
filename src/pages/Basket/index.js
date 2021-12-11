@@ -5,6 +5,7 @@ import { BasketContext } from '../../contexts/BasketContext';
 import { Helmet } from 'react-helmet-async';
 import { Card, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 
 const Basket = () => {
@@ -39,11 +40,11 @@ const Basket = () => {
                         return (
                             <Card key={product.id}>
                                 <Card.Body className="d-flex align-items-center flex-wrap g-1">
-                                    
-                                <Link to={`/produtos/${product.id}`}><Card.Img className="col" variant="top" src={product.image} alt={product.title} /></Link>
-                                <Card.Title className="col p-3">{product.title}</Card.Title>
+
+                                    <Link to={`/produtos/${product.id}`}><Card.Img className="col" variant="top" src={product.image} alt={product.title} /></Link>
+                                    <Card.Title className="col p-3">{product.title}</Card.Title>
                                     <Card.Text className="col p-3">R$ {product.price}</Card.Text>
-                                    
+
                                     <Button className="col" onClick={() => deleteProduct({ product })} variant="light">Excluir</Button>
                                 </Card.Body>
                             </Card>
@@ -51,9 +52,28 @@ const Basket = () => {
                     })
                 }
                 <Card className="d-flex p-3">
-                <Card.Title className="ms-auto">Total R$ {total}</Card.Title>
+                    <Card.Title className="ms-auto">Total R$ {total}</Card.Title>
                 </Card>
-                    
+                <Card className="d-flex p-3">
+                <Button className="ms-auto confirmButton" onClick={() =>
+
+                    products.map(({ product }) => {
+                        return (
+                            Swal.fire({
+                                title: 'Pedido confirmado!',
+                                text: 'Sua fornada sairá em breve',
+                                confirmButtonColor: '#000000',
+                                imageUrl: 'https://cdn-icons.flaticon.com/png/512/2565/premium/2565434.png?token=exp=1639255570~hmac=602b2b9a9c3c7eff94eebb00f2d1677a',
+                                imageWidth: 200,
+                                imageAlt: 'bread',
+                            }),
+                            deleteProduct({ product }))
+                    })} variant="light">Confirmar pedido</Button>
+                    </Card>
+
+
+
+
             </Container>
         </>
     )
