@@ -1,22 +1,12 @@
 import './style.scss';
-import { NavDropdown, Container, Navbar, Nav } from 'react-bootstrap';
+import { NavDropdown, Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import BasketContent from './components/BasketContent';
 
-// import {}
-
 const Header = () => {
-    // const [category, setCategory] = useState();
-
-    // useEffect(() => {
-    //     //chamada api
-    //     console.log(category);
-    // })
-
     return (
         <div id="header">
-            <Navbar className="fixed-top" collapseOnSelect expand="md" bg="light opacity-75" variant="light">
-                <Container>
+            <Navbar className="fixed-top px-3" collapseOnSelect expand="md" bg="light opacity-75" variant="light">
                     <Navbar.Brand as={Link} to="/">Vidoti's Bakery</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav d-flex">
@@ -32,13 +22,15 @@ const Header = () => {
                             </NavDropdown>
                             <Nav.Link as={Link} to="/produtos">Produtos</Nav.Link>
                             <Nav.Link as={Link} to="/sobrenos">Sobre nós</Nav.Link>
-                            <NavDropdown title={<img className="ms-auto" id="cartLogo" src="https://cdn-icons-png.flaticon.com/512/1685/1685564.png" alt="Cesta"></img>} id="navbarScrollingDropdown">
+                            </Nav>
+                            <Nav className="ms-auto justify-content-end">
+                            <NavDropdown align="end" title={<img id="cartLogo" src="https://cdn-icons-png.flaticon.com/512/1685/1685564.png" alt="Cesta"></img>} id="navbarScrollingDropdown">
                                 <BasketContent />
-                                <NavDropdown.Item className="bg-secondary" as={Link} to="/cesta">Ir para Cesta</NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item as={Link} to="/cesta">Ir para Cesta</NavDropdown.Item>
                             </NavDropdown>
-                        </Nav>
+                            </Nav>
                     </Navbar.Collapse>
-                </Container>
             </Navbar>
         </div>
     )
