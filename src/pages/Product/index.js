@@ -30,6 +30,7 @@ const Product = () => {
 
                                 <Card.Title>{product.title}</Card.Title>
                                 <Card.Text>{product.description}</Card.Text>
+                                <Card.Text>R$ {product.price}</Card.Text>
                                 <Card.Text className="d-flex"> {(product.hasEgg === false) &&
                                     (<OverlayTrigger
                                         overlay={
