@@ -13,7 +13,7 @@ const AboutUs = () => {
         {
             id: 1,
             name: "Ailla Freire",
-            description: "vaquinha",
+            description: "Sabe fazer doces medievais e tatuagem de henna, é designer gráfica, UX/UI e estudante de Desenvolvimento fullstack na Digital House",
             linkGitHub: "https://github.com/AillaF",
             linkLinkedIn: "https://www.linkedin.com/in/aillafreire/",
             email: "aillaf@gmail.com",
@@ -22,7 +22,7 @@ const AboutUs = () => {
         {
             id: 2,
             name: "Carolina Hakamada",
-            description: "porquinha",
+            description: "Estilista de fantasias de carnaval feitas a mão e degustadora oficial dos pães da Vidoti's Bakery, é arquiteta e aluna Tech Developer da Digital House",
             linkGitHub: "https://github.com/hakacarol",
             linkLinkedIn: "https://www.linkedin.com/in/hakacarolina/",
             email: "haka.carolina@gmail.com",
@@ -31,7 +31,7 @@ const AboutUs = () => {
         {
             id: 3,
             name: "Clarissa Arruda",
-            description: "clarinet",
+            description: "Amante da natureza, gosta de inventar na culinária, é publicitária e estuda desenvolvimento de software na Digital House",
             linkGitHub: "https://github.com/ClarissaFA",
             linkLinkedIn: "https://www.linkedin.com/in/clarissafaarruda",
             email: "cla.farencena@gmail.com",
@@ -40,7 +40,7 @@ const AboutUs = () => {
         {
             id: 4,
             name: "Helena Perdigueiro",
-            description: "canetinha",
+            description: "Expert em alongamentos, ensinou seus 4 cachorros a guardar roupas, é personal trainer e Desenvolvedora de software em formação na Digital House",
             linkGitHub: "https://github.com/helenaperdigueiro",
             linkLinkedIn: "https://www.linkedin.com/in/helenaperdigueiro/",
             email: "helena.perdigueiro@gmail.com",
@@ -49,7 +49,7 @@ const AboutUs = () => {
         {
             id: 5,
             name: "Renata Leal",
-            description: "board games",
+            description: "Especialista em board games e colecionadora de habilidades gourmet, é designer de interiores e aluna do Certified Tech Developer da Digital House",
             linkGitHub: "https://github.com/RenatadsLeal",
             linkLinkedIn: "https://www.linkedin.com/in/renata-dsleal/",
             email: "renata.dsleal@gmail.com",
